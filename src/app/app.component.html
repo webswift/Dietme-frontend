@@ -1,0 +1,22 @@
+<div class="wrapper">
+
+  <app-header *ngIf="showHeader"></app-header>
+  <toaster-container [toasterconfig]="toasterconfig"></toaster-container>
+
+  <app-navbar *ngIf="showHeader"></app-navbar>
+
+  <div class="content-wrapper" *ngIf="showHeader">
+    <router-outlet></router-outlet>
+  </div>
+  <router-outlet *ngIf="!showHeader"></router-outlet>
+  <footer class="main-footer" *ngIf="showHeader">
+    <div class="pull-right hidden-xs">
+      Anything you want
+    </div>
+    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+  </footer>
+  <app-settings></app-settings>
+  <div class="control-sidebar-bg"></div>
+</div>
+
+<router-outlet></router-outlet>
